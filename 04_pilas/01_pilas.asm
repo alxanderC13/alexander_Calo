@@ -13,7 +13,7 @@ includelib \masm32\lib\kernel32.lib
 .data
   a dd 1                      ; Definimos variable 'a' con valor 1
   b dd 2                      ; Definimos variable 'b' con valor 2
-  c dd 3                      ; Definimos variable 'c' con valor 3
+  c_val 3                      ; Definimos variable 'c' con valor 3
   r1 dd ?                     ; Variable para guardar resultado 1 (POP)
   r2 dd ?                     ; Variable para guardar resultado 2
   r3 dd ?                     ; Variable para guardar resultado 3
@@ -39,7 +39,7 @@ start:
   call crt_printf
   add esp, 8
 
-  push c
+  push c_val
   push offset msg_push
   call crt_printf
   add esp, 8
